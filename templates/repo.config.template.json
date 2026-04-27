@@ -15,5 +15,6 @@
   "hashAlgorithm": "SHA256",
   "githubRemote": "",
   "githubWriteEnabled": false,
-  "spgitPrimary": true
+  "spgitPrimary": true,
+  "spgitScriptsRoot": "C:\\path\\to\\SPGit-Scripts\\scripts"
 }

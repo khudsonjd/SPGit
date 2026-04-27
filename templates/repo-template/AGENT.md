@@ -1,41 +1,36 @@
 # AGENT.md
 
-AI behavior instructions for this repo.
+Repo-specific AI behavior instructions. Supplements `CLAUDE.md`.
 
 ## What this repo is
 
-[Describe the repo purpose in 1-2 sentences.]
+[Describe the repo purpose in 1-2 sentences. What does it store? Who uses it?]
 
 ## Key files
 
-- `SESSION.md` — active work and last decisions; read on open, update on close
-- `memory/status.md` — current priorities and active items
-- `memory/project_plan.md` — stable goals and reference info
-- `repo.config.json` — SharePoint site URL, library name, local paths
+| File | Purpose |
+|---|---|
+| `CLAUDE.md` | Claude Code entrypoint — session open/close conventions |
+| `SESSION.md` | Active work, last decisions, immediate focus |
+| `memory/status.md` | Current priorities and in-progress items |
+| `memory/project_plan.md` | Stable goals and reference info |
+| `repo.config.json` | SharePoint site URL, library name, local paths, scripts path |
+| `.spgitignore` | Files excluded from sync |
 
-## Session open
+## Behavioral rules
 
-Read `SESSION.md` and `memory/status.md`. Summarize last decisions and ask what to work on.
+- **State intent before acting** — for any file-level change, say what you are about to do first
+- **Update `memory/status.md`** whenever priorities or active items change — do not wait until session close
+- **Flag conflicts** — if Sync-SPGitRepo surfaces a conflict, surface it to the user before proceeding
+- **Concise responses** — this is a working session, not a briefing
 
-## Session close
+## What the AI should NOT do
 
-1. Update `memory/status.md` with current priorities and in-progress items.
-2. Update `SESSION.md` — replace last-session decisions with this session's key decisions. Update the date.
-3. Run `Sync-SPGitRepo` to push changes to SharePoint.
+- Generate PowerShell 7 syntax (PS5.1 only)
+- Use em dashes, curly quotes, or non-ASCII characters in script files
+- Silently resolve sync conflicts
+- Edit `metadata/` files directly — these are managed by SPGit scripts
 
-## Scripts
+## Repo-specific notes
 
-All scripts are in `../../scripts/` (relative to this repo root). Dot-source only what you need:
-
-```powershell
-. .\scripts\SPGit-Connect.ps1
-. .\scripts\SPGit-Sync.ps1
-. .\scripts\SPGit-Manifest.ps1
-Sync-SPGitRepo -ConfigPath ".\repo.config.json"
-```
-
-## Constraints
-
-- PowerShell 5.1 only. Never generate PS7 syntax.
-- ASCII strings only — no em dashes, curly quotes, or Unicode characters in scripts.
-- Bump the version comment on every script edit.
+[Add any conventions, constraints, or context specific to this repo here.]
