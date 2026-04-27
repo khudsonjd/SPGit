@@ -1,0 +1,19 @@
+{
+  "repoName": "YOUR-REPO-NAME",
+  "siteUrl": "https://yourtenant.sharepoint.com/sites/yoursite/",
+  "libraryName": "SPGit",
+  "repoServerRelativeUrl": "/sites/yoursite/SPGit/YOUR-REPO-NAME",
+  "localRoot": "",
+  "defaultBranchModel": "controlled-sharepoint",
+  "mainFolder": "main",
+  "devFolder": "dev",
+  "releaseFolder": "releases",
+  "memoryFolder": "memory",
+  "metadataFolder": "metadata",
+  "ignoreFile": ".spgitignore",
+  "requiresCheckout": true,
+  "hashAlgorithm": "SHA256",
+  "githubRemote": "",
+  "githubWriteEnabled": false,
+  "spgitPrimary": true
+}

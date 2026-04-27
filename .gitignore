@@ -1,0 +1,10 @@
+# Local repo clones (not part of the toolkit itself)
+*.local.json
+
+# PowerShell temporary files
+*.psm1
+*.psd1
+
+# OS files
+Thumbs.db
+.DS_Store
